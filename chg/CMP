@@ -1,0 +1,5 @@
+#!/bin/sh
+nams=$(find . -type f -name "*.c")
+for nam in $nams;do
+tcc -o $(echo -n $nam|xargs basename|cut -d "." -f1) $nam
+done
